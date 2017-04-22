@@ -1,0 +1,15 @@
+<h3> Edycja	</h3>
+
+
+<%= simple_form_for (@exercise) do |o| %>
+
+<%= o.input :name, label: 'nazwa'%>
+<br />
+<%= o.input :max_points, label: 'maksimum punktów' %>
+<br />
+<%= o.input :penalty, label: 'punkty', placeholder: 'X.yy' %>
+<br />
+<%= o.input :notification_email, label: 'e-mail', placeholder: ' xxxx@yyy.zz'%>
+<br />
+<%= o.button :submit %>
+<%end%>

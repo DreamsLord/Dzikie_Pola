@@ -1,0 +1,19 @@
+<table class= table-bordered>
+	<tr>
+		<th>nazwa</th>
+		<th>maksimum punktow</th>
+		<th>punkty</th>
+		<th>e-mail</th>>
+		<th>EDYTUJ</th>
+		<th>USUŃ</th>
+	</tr>
+	<tr>
+		<th><%= link_to @exercise.name, exercise_path(id: @exercise.id)  %></th>
+		<th><%= @exercise.max_points  %></th>
+		<th><%= @exercise.penalty  %></th>
+		<th><%= @exercise.notification_email  %></th>
+		<th><%= link_to 'edytuj', edit_exercise_path( @exercise )  %></th>
+		<th><%= link_to 'usuń', exercise_path( @exercise ), method: :delete, data:{ confirm: 'Na pewno usunąć?'}  %></th>
+		<th
+	</tr>	
+</table>

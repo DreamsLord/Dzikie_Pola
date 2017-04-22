@@ -1,0 +1,36 @@
+
+<%= link_to 'dodaj rekord', new_exercise_path %>
+
+
+<table class= table-bordered>
+	<tr>
+		<th>nazwa</th>
+		<th>maksimum punktow</th>
+		<th>punkty</th>
+		<th>e-mail</th>>
+		<th>EDYTUJ</th>
+		<th>USUŃ</th>
+	</tr>
+	<%@exercises = ( @exercises ||= "") %>
+	<% if @exercises.empty? %>
+
+	<th>brak rekordów w bd</th>
+	<th>brak rekordów w bd</th>
+	<th>brak rekordów w bd</th>
+	<th>brak rekordów w bd</th>
+	<th>brak rekordów w bd</th>
+	<th>brak rekordów w bd</th>
+	<%else%>
+		<%@exercises.each do |x|%>
+			<tr>
+				<th><%= link_to x.name, exercise_path(id: x.id)  %></th>
+				<th><%= x.max_points  %></th>
+				<th><%= x.penalty  %></th>
+				<th><%= x.notification_email  %></th>
+				<th><%= link_to 'edytuj', edit_exercise_path( x )  %></th>
+				<th><%= link_to 'usuń', exercise_path( x ), method: :delete, data:{ confirm: 'Na pewno usunąć?'}  %></th>
+			</tr>	
+		<% end %>
+	<% end %>
+</table>
+
