@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  surname: MyString
+  type: 
+  nation: MyString
+  age: 1
+  weight: 1
+  faith: MyString
+  faith_in_the_magic: MyString
+  courage: MyString
+  devotion: MyString
+  amorous: MyString
+  honour: MyString
+  law_and_order: MyString
+  wealth: MyString
+  reputation: MyString
+  strong: 1
+  ability: 1
+  sense: 1
+  wisdom: 1
+  fancy: 1
+  head: 1
+  fortune: 1
+  initiative: 1
+  hit: 1
+  stout: 1
+  sabre: 1
+  matchlock: 1
+  spear: 1
+
+two:
+  name: MyString
+  surname: MyString
+  type: 
+  nation: MyString
+  age: 1
+  weight: 1
+  faith: MyString
+  faith_in_the_magic: MyString
+  courage: MyString
+  devotion: MyString
+  amorous: MyString
+  honour: MyString
+  law_and_order: MyString
+  wealth: MyString
+  reputation: MyString
+  strong: 1
+  ability: 1
+  sense: 1
+  wisdom: 1
+  fancy: 1
+  head: 1
+  fortune: 1
+  initiative: 1
+  hit: 1
+  stout: 1
+  sabre: 1
+  matchlock: 1
+  spear: 1
