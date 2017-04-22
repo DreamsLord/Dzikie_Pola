@@ -1,14 +1,65 @@
-<h3> Nowy rekord	</h3>
+<h3> Nowy Gracz	</h3>
 
-
-<%= simple_form_for (@exercise) do |o| %>
-<%= o.input :name, label: 'nazwa'%>
+<%= simple_form_for (@player) do |o| %>
+<%= o.input :name, label: 'imie'%>
 <br />
-<%= o.input :max_points, label: 'maksimum punktów' %>
+<%= o.input :surname, label: 'nazwisko'%>
 <br />
-<%= o.input :penalty, label: 'punkty', placeholder: 'X.yy' %>
+<%= o.input :typ, label: 'typ'%>
 <br />
-<%= o.input :notification_email, label: 'e-mail', placeholder: ' xxxx@yyy.zz'%>
+<%= o.input :nation, label: 'nacja'%>
+<br />
+<%= o.input :age, label: 'wiek'%>
+<br />
+<%= o.input :height, label: 'wzrost'%>
+<br />
+<%= o.input :weight, label: 'waga'%>
+<br />
+<%= o.input :faith, label: 'wiara'%>
+<br />
+<%= o.input :faith_in_the_magic, label: 'wiara w magie'%>
+<br />
+<%= o.input :courage, label: 'odwaga'%>
+<br />
+<%= o.input :devotion, label: 'pobożność'%>
+<br />
+<%= o.input :amorous, label: 'kochliwość'%>
+<br />
+<%= o.input :honour, label: 'honor'%>
+<br />
+<%= o.input :law_and_order, label: 'praworządność'%>
+<br />
+<%= o.input :wealth, label: 'kondycja'%>
+<br />
+<%= o.input :reputation, label: 'reputacja'%>
+<br />
+<%= o.input :strong, label: 'siła'%>
+<br />
+<%= o.input :ability, label: 'zręczność'%>
+<br />
+<%= o.input :sense, label: 'zmysły'%>
+<br />
+<%= o.input :wisdom, label: 'mądrość'%>
+<br />
+<%= o.input :fancy, label: 'fantazja'%>
+<br />
+<%= o.input :head, label: 'łeb'%>
+<br />
+<%= o.input :fortune, label: 'fortuna'%>
+<br />
+<%= o.input :initiative, label: 'inicjatywa'%>
+<br />
+<%= o.input :hit, label: 'cios'%>
+<br />
+<%= o.input :stout, label: 'tęgość'%>
+<br />
+<%= o.input :sabre, label: 'szabla'%>
+<br />
+<%= o.input :matchlock, label: 'rusznica'%>
+<br />
+<%= o.input :spear, label: 'włócznia'%>
+<br />
+<%= o.input :rapier, label: 'rapier'%>
 <br />
 <%= o.button :submit %>
 <%end%>

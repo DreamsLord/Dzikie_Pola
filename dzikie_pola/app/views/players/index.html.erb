@@ -1,36 +1,90 @@
+ <form action = "/fight" method = "GET">
+ 	<table class= table-bordered>
+ 		<tr>
+ 			<th>id</th>
+ 			<th>imie</th>
+ 			<th>nazwisko</th>
+ 			<th>typ</th>
+ 			<th>nacja</th>
+ 			<th>wiek</th>
+ 			<th>wzrost</th>
+ 			<th>waga</th>
+ 			<th>wiara</th>
+ 			<th>wiara w magie</th>
+ 			<th>odwaga</th>
+ 			<th>pobożność</th>
+ 			<th>kochliwość</th>
+ 			<th>honor</th>
+ 			<th>praworządność</th>
+ 			<th>kondycja</th>
+ 			<th>reputacja</th>
+ 			<th>siła</th>
+ 			<th>zręczność</th>
+ 			<th>zmysły</th>
+ 			<th>mądrość</th>
+ 			<th>fantazja</th>
+ 			<th>łeb</th>
+ 			<th>fortuna</th>
+ 			<th>inicjatywa</th>
+ 			<th>cios</th>
+ 			<th>tęgość</th>
+ 			<th>szabla</th>
+ 			<th>rusznica</th>
+ 			<th>włócznia</th>
+ 			<th>rapier</th>
+ 			<th>walka</th>
+ 			<th>edytuj</th>
+ 			<th>usuń</th>
+ 		</tr>
 
-<%= link_to 'dodaj rekord', new_exercise_path %>
+ 		<%@players.each do |x|%>
+ 		<tr>
+ 			<th><%= link_to x.id, player_path(id: x.id)  %></th>
+ 			<th><%= link_to x.name, player_path(id: x.id)  %></th>
+ 			<th><%= x.surname  %></th>
+ 			<th><%= x.typ  %></th>
+ 			<th><%= x.nation  %></th>
+ 			<th><%= x.age  %></th>
+ 			<th><%= x.height  %></th>
+ 			<th><%= x.weight  %></th>
+ 			<th><%= x.faith  %></th>
+ 			<th><%= x.faith_in_the_magic  %></th>
+ 			<th><%= x.courage  %></th>
+ 			<th><%= x.devotion  %></th>
+ 			<th><%= x.amorous  %></th>
+ 			<th><%= x.honour  %></th>
+ 			<th><%= x.law_and_order  %></th>
+ 			<th><%= x.wealth  %></th>
+ 			<th><%= x.reputation  %></th>
+ 			<th><%= x.strong  %></th>
+ 			<th><%= x.ability  %></th>
+ 			<th><%= x.sense  %></th>
+ 			<th><%= x.wisdom  %></th>
+ 			<th><%= x.fancy  %></th>
+ 			<th><%= x.head  %></th>
+ 			<th><%= x.fortune  %></th>
+ 			<th><%= x.initiative  %></th>
+ 			<th><%= x.hit  %></th>
+ 			<th><%= x.stout  %></th>
+ 			<th><%= x.sabre  %></th>
+ 			<th><%= x.matchlock  %></th>
+ 			<th><%= x.spear  %></th>
+ 			<th><%= x.rapier  %></th>
+ 			<th> 
 
+ 				<label>
+ 					<input type="checkbox" name ="check_player" value = "1" >
+ 				</label>
 
-<table class= table-bordered>
-	<tr>
-		<th>nazwa</th>
-		<th>maksimum punktow</th>
-		<th>punkty</th>
-		<th>e-mail</th>>
-		<th>EDYTUJ</th>
-		<th>USUŃ</th>
-	</tr>
-	<%@exercises = ( @exercises ||= "") %>
-	<% if @exercises.empty? %>
+ 			</th>
+ 			<th><%= link_to 'edytuj', edit_player_path( x )  %></th>
+ 			<th><%= link_to 'usuń', player_path( x ), method: :delete, data:{ confirm: 'Na pewno usunąć?'}  %></th>
+ 		</tr>	
+ 		<% end %>
+ 	</table>
+ 	<label>
+	<input type = "submit"> Walka </input>
+	</label>
+ </form> 
 
-	<th>brak rekordów w bd</th>
-	<th>brak rekordów w bd</th>
-	<th>brak rekordów w bd</th>
-	<th>brak rekordów w bd</th>
-	<th>brak rekordów w bd</th>
-	<th>brak rekordów w bd</th>
-	<%else%>
-		<%@exercises.each do |x|%>
-			<tr>
-				<th><%= link_to x.name, exercise_path(id: x.id)  %></th>
-				<th><%= x.max_points  %></th>
-				<th><%= x.penalty  %></th>
-				<th><%= x.notification_email  %></th>
-				<th><%= link_to 'edytuj', edit_exercise_path( x )  %></th>
-				<th><%= link_to 'usuń', exercise_path( x ), method: :delete, data:{ confirm: 'Na pewno usunąć?'}  %></th>
-			</tr>	
-		<% end %>
-	<% end %>
-</table>
 
