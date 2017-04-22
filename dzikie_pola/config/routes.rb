@@ -6,5 +6,6 @@ resources :players
 
 root 'players#index'
 get 'fight', to: 'fight#choose_players_to_fight'
+post 'fight', to: 'fight#choose_players_to_fight'
 
 end

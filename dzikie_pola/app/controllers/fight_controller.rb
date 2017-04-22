@@ -1,6 +1,7 @@
 class FightController < ApplicationController
 
-	before_action :set_player, only: [:show, :edit, :update, :destroy]
+protect_from_forgery with: :null_session
+	#before_action :set_player, only: [:show, :edit, :update, :destroy]
 
 	def set_player
 		@player = Player.find(params[:id])
