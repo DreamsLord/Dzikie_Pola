@@ -1,90 +1,86 @@
- <form action = "/fight" method = "POST">
- 	<table class= table-bordered>
- 		<tr>
- 			<th>id</th>
- 			<th>imie</th>
- 			<th>nazwisko</th>
- 			<th>typ</th>
- 			<th>nacja</th>
- 			<th>wiek</th>
- 			<th>wzrost</th>
- 			<th>waga</th>
- 			<th>wiara</th>
- 			<th>wiara w magie</th>
- 			<th>odwaga</th>
- 			<th>pobożność</th>
- 			<th>kochliwość</th>
- 			<th>honor</th>
- 			<th>praworządność</th>
- 			<th>kondycja</th>
- 			<th>reputacja</th>
- 			<th>siła</th>
- 			<th>zręczność</th>
- 			<th>zmysły</th>
- 			<th>mądrość</th>
- 			<th>fantazja</th>
- 			<th>łeb</th>
- 			<th>fortuna</th>
- 			<th>inicjatywa</th>
- 			<th>cios</th>
- 			<th>tęgość</th>
- 			<th>szabla</th>
- 			<th>rusznica</th>
- 			<th>włócznia</th>
- 			<th>rapier</th>
- 			<th>walka</th>
- 			<th>edytuj</th>
- 			<th>usuń</th>
- 		</tr>
+<form action = "/fighters" method = "POST">
+	<table class= table-bordered>
+		<tr>
+			<th>id</th>
+			<th>imie</th>
+			<th>nazwisko</th>
+			<th>typ</th>
+			<th>nacja</th>
+			<th>wiek</th>
+			<th>wzrost</th>
+			<th>waga</th>
+			<th>wiara</th>
+			<th>wiara w magie</th>
+			<th>odwaga</th>
+			<th>pobożność</th>
+			<th>kochliwość</th>
+			<th>honor</th>
+			<th>praworządność</th>
+			<th>kondycja</th>
+			<th>reputacja</th>
+			<th>siła</th>
+			<th>zręczność</th>
+			<th>zmysły</th>
+			<th>mądrość</th>
+			<th>fantazja</th>
+			<th>łeb</th>
+			<th>fortuna</th>
+			<th>inicjatywa</th>
+			<th>cios</th>
+			<th>tęgość</th>
+			<th>szabla</th>
+			<th>rusznica</th>
+			<th>włócznia</th>
+			<th>rapier</th>
+			<th>walka</th>
+			<th>edytuj</th>
+			<th>usuń</th>
+		</tr>
+		<%@players.each do |x|%>
+		<tr>
+			<th><%= link_to x.id, player_path(id: x.id)  %></th>
+			<th><%= link_to x.name, player_path(id: x.id)  %></th>
+			
+			<th><%= x.surname  %></th>
+			<th><%= x.typ  %></th>
+			<th><%= x.nation  %></th>
+			<th><%= x.age  %></th>
+			<th><%= x.height  %></th>
+			<th><%= x.weight  %></th>
+			<th><%= x.faith  %></th>
+			<th><%= x.faith_in_the_magic  %></th>
+			<th><%= x.courage  %></th>
+			<th><%= x.devotion  %></th>
+			<th><%= x.amorous  %></th>
+			<th><%= x.honour  %></th>
+			<th><%= x.law_and_order  %></th>
+			<th><%= x.wealth  %></th>
+			<th><%= x.reputation  %></th>
+			<th><%= x.strong  %></th>
+			<th><%= x.ability  %></th>
+			<th><%= x.sense  %></th>
+			<th><%= x.wisdom  %></th>
+			<th><%= x.fancy  %></th>
+			<th><%= x.head  %></th>
+			<th><%= x.fortune  %></th>
+			<th><%= x.initiative  %></th>
+			<th><%= x.hit  %></th>
+			<th><%= x.stout  %></th>
+			<th><%= x.sabre  %></th>
+			<th><%= x.matchlock  %></th>
+			<th><%= x.spear  %></th>
+			<th><%= x.rapier  %></th>
+			<th> 
+				<label>
+					<input type="checkbox" name= "player[<%=x.id%>]" />
+					</label>
+					</th>
+					<th><%= link_to 'edytuj', edit_player_path( x )  %></th>
+					<th><%= link_to 'usuń', player_path( x ), method: :delete, data:{ confirm: 'Na pewno usunąć?'}  %></th>
+				</tr>	
+				<% end %>
+			</table>
+			<input type= "submit" value= "Walka">
+		</form>
 
- 		<%@players.each do |x|%>
- 		<tr>
- 			<th><%= link_to x.id, player_path(id: x.id)  %></th>
- 			<th><%= link_to x.name, player_path(id: x.id)  %></th>
- 			<th><%= x.surname  %></th>
- 			<th><%= x.typ  %></th>
- 			<th><%= x.nation  %></th>
- 			<th><%= x.age  %></th>
- 			<th><%= x.height  %></th>
- 			<th><%= x.weight  %></th>
- 			<th><%= x.faith  %></th>
- 			<th><%= x.faith_in_the_magic  %></th>
- 			<th><%= x.courage  %></th>
- 			<th><%= x.devotion  %></th>
- 			<th><%= x.amorous  %></th>
- 			<th><%= x.honour  %></th>
- 			<th><%= x.law_and_order  %></th>
- 			<th><%= x.wealth  %></th>
- 			<th><%= x.reputation  %></th>
- 			<th><%= x.strong  %></th>
- 			<th><%= x.ability  %></th>
- 			<th><%= x.sense  %></th>
- 			<th><%= x.wisdom  %></th>
- 			<th><%= x.fancy  %></th>
- 			<th><%= x.head  %></th>
- 			<th><%= x.fortune  %></th>
- 			<th><%= x.initiative  %></th>
- 			<th><%= x.hit  %></th>
- 			<th><%= x.stout  %></th>
- 			<th><%= x.sabre  %></th>
- 			<th><%= x.matchlock  %></th>
- 			<th><%= x.spear  %></th>
- 			<th><%= x.rapier  %></th>
- 			<th> 
-
- 				<label>
- 			
- 					<input type="checkbox" name ="check_player" value = <%= x.id %> >
- 				</label>
-
- 			</th>
- 			<th><%= link_to 'edytuj', edit_player_path( x )  %></th>
- 			<th><%= link_to 'usuń', player_path( x ), method: :delete, data:{ confirm: 'Na pewno usunąć?'}  %></th>
- 		</tr>	
- 		<% end %>
- 	</table>
- 	<label>
-	<input type = "submit"> Walka </input>
-	</label>
-	</form>
 

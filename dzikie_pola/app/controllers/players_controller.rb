@@ -44,7 +44,7 @@ class PlayersController < ApplicationController
 	end
 
 		def destroy
-			flash[:notice] = "usunięto gracza ID: #{player.id} name: #{player.name}"
+			flash[:notice] = "usunięto gracza ID: #{@player.id} name: #{@player.name}"
 			@player.destroy
 		end
 

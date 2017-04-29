@@ -1,0 +1,25 @@
+<table class="table">
+	<tr>
+		<th> id </th>
+		<th> name </th>
+		<th> zręczność </th>
+		<th> łeb </th>
+		<th> Inicjatywa </th>
+		<th> szabla </th>
+		<th> rusznica </th>
+		<th> rapier </th>
+	</tr>
+	<% @fighters.each do |f| %>
+	<tr>
+		<% p = Player.find(f.to_i) %>
+		<th> <%= p.id %> </th>
+		<th> <%= p.name%> </th>
+		<th> <%= p.ability %> </th>
+		<th> <%= p.head %> </th>
+		<th> <%= p.initiative %> </th>
+		<th> <%= p.sabre %> </th>
+		<th> <%= p.matchlock %> </th>
+		<th> <%= p.rapier %> </th>
+	</tr>
+	<%end %>
+</table>

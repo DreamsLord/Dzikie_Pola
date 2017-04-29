@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 resources :players
+# resources :fighters
 
 
 root 'players#index'
-get 'fight', to: 'fight#choose_players_to_fight'
-post 'fight', to: 'fight#choose_players_to_fight'
+post 'fighters', to: 'fighters#choose_players_to_fight'
+get 'fighters', to: 'fighters#show_choose_players'
 
 end
