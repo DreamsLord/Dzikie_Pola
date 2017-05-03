@@ -2,6 +2,7 @@
 	<table class= table-bordered>
 		<tr>
 			<th>id</th>
+			
 			<th>imie</th>
 			<th>nazwisko</th>
 			<th>typ</th>
@@ -40,7 +41,11 @@
 		<tr>
 			<th><%= link_to x.id, player_path(id: x.id)  %></th>
 			<th><%= link_to x.name, player_path(id: x.id)  %></th>
-			
+				<th> 
+			<label>
+				<input type="checkbox" name= "player[<%=x.id%>]" />
+			</label>
+			</th>
 			<th><%= x.surname  %></th>
 			<th><%= x.typ  %></th>
 			<th><%= x.nation  %></th>
@@ -70,17 +75,13 @@
 			<th><%= x.matchlock  %></th>
 			<th><%= x.spear  %></th>
 			<th><%= x.rapier  %></th>
-			<th> 
-				<label>
-					<input type="checkbox" name= "player[<%=x.id%>]" />
-					</label>
-					</th>
-					<th><%= link_to 'edytuj', edit_player_path( x )  %></th>
-					<th><%= link_to 'usuń', player_path( x ), method: :delete, data:{ confirm: 'Na pewno usunąć?'}  %></th>
-				</tr>	
-				<% end %>
-			</table>
-			<input type= "submit" value= "Walka">
-		</form>
+
+			<th><%= link_to 'edytuj', edit_player_path( x )  %></th>
+			<th><%= link_to 'usuń', player_path( x ), method: :delete, data:{ confirm: 'Na pewno usunąć?'}  %></th>
+		</tr>	
+		<% end %>
+	</table>
+	<input type= "submit" value= "Walka">
+</form>
 
 

@@ -8,10 +8,14 @@
 		<th> szabla </th>
 		<th> rusznica </th>
 		<th> rapier </th>
+		<th> lekka</th>
+		<th> poważna</th>
+		<th> ciężka</th>
+		<th> okrutna</th>
+		<th> śmierć</th>
 	</tr>
-	<% @fighters.each do |f| %>
+	<% @fighters.each do |p| %>
 	<tr>
-		<% p = Player.find(f.to_i) %>
 		<th> <%= p.id %> </th>
 		<th> <%= p.name%> </th>
 		<th> <%= p.ability %> </th>
@@ -20,6 +24,26 @@
 		<th> <%= p.sabre %> </th>
 		<th> <%= p.matchlock %> </th>
 		<th> <%= p.rapier %> </th>
+		<th> <%= p.light %></th>
+		<th> <%= p.heavy %></th>
+		<th> <%= p.heavy %></th>
+		<th> <%= p.harsh %></th>
+		<th> <%= p.death %></th>
+	
 	</tr>
 	<%end %>
 </table>
+<br />
+
+<table class = 'table'>
+	<tr>
+		<th> Drużyna A</th>
+		<th> Drużyna B</th>
+	</tr>
+</table>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src='js/choose_player_to_fight.js'></script>
